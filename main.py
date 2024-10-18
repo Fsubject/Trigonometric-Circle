@@ -32,7 +32,7 @@ class Window:
 
         self.angle_i = -1
 
-    def draw_circle(self):
+    def draw_circle(self) -> None:
         pygame.draw.circle(self.window, color=BLACK, center=self.c_center, width=2, radius=self.c_radius)
         self.window.blit(self.zero, (self.c_center[0] + 10, self.c_center[1] + 10))
 
@@ -44,7 +44,7 @@ class Window:
         self.window.blit(self.one, (self.c_center[0] + 10, self.c_center[1] - 330))
         self.window.blit(self.minus_one, (self.c_center[0] + 10, self.c_center[1] + 320))
 
-    def run(self):
+    def run(self) -> None:
         while self.running:
             self.clock.tick(60)
             self.window.fill(WHITE)
