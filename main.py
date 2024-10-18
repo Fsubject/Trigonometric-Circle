@@ -37,12 +37,12 @@ class Window:
         self.window.blit(self.zero, (self.c_center[0] + 10, self.c_center[1] + 10))
 
         pygame.draw.line(self.window, BLACK, (self.c_center[0] - 330, self.c_center[1]), (self.c_center[0] + 330, self.c_center[1]), 2)
-        self.window.blit(self.one, (self.c_center[0] + 330, self.c_center[1] + 10))
+        self.window.blit(self.one, (self.c_center[0] + 320, self.c_center[1] + 10))
         self.window.blit(self.minus_one, (self.c_center[0] - 330, self.c_center[1] + 10))
 
         pygame.draw.line(self.window, BLACK, (self.c_center[0], self.c_center[1] - 340), (self.c_center[0], self.c_center[1] + 340), 2)
         self.window.blit(self.one, (self.c_center[0] + 10, self.c_center[1] - 330))
-        self.window.blit(self.minus_one, (self.c_center[0] + 10, self.c_center[1] + 330))
+        self.window.blit(self.minus_one, (self.c_center[0] + 10, self.c_center[1] + 320))
 
     def run(self):
         while self.running:
