@@ -66,11 +66,13 @@ def main():
             pygame.draw.circle(window, BLACK, point[0], 4)
             pygame.draw.line(window, BLACK, center, point[0], 3)
 
+        angle_txt = font.render(f"Actual angle: {user_points[angle_i][1] if angle_i >= 0 else "N/A"}°", False, BLACK)
+        window.blit(angle_txt, (30, 30))
         if angle_i >= 0:
-            sin = font.render(f"sin {user_points[angle_i][1]}° = {math.sin(user_points[angle_i][1])}", False, BLACK)
-            cos = font.render(f"cos {user_points[angle_i][1]}° = {math.cos(user_points[angle_i][1])}", False, BLACK)
-            tan = font.render(f"tan {user_points[angle_i][1]}° = {math.tan(user_points[angle_i][1])}", False, BLACK)
-            cot = font.render(f"cot {user_points[angle_i][1]}° = {get_cot(math.sin(user_points[angle_i][1]), math.cos(user_points[angle_i][1]))}", False, BLACK)
+            sin = font.render(f"sin {user_points[angle_i][1]}° = {user_points[angle_i][2][0]}", False, BLACK)
+            cos = font.render(f"cos {user_points[angle_i][1]}° = {user_points[angle_i][2][1]}", False, BLACK)
+            tan = font.render(f"tan {user_points[angle_i][1]}° = {user_points[angle_i][2][2]}", False, BLACK)
+            cot = font.render(f"cot {user_points[angle_i][1]}° = {user_points[angle_i][2][3]}", False, BLACK)
 
             window.blit(sin, (100, HEIGHT - 200))
             window.blit(cos, (100, HEIGHT - 100))
