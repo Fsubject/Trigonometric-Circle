@@ -23,10 +23,10 @@ class Circle:
         x = self.center[0] + self.radius * ((mouse_pos[0] - self.center[0]) / point_dist)
         y = self.center[1] + self.radius * ((mouse_pos[1] - self.center[1]) / point_dist)
 
-        angle_radians = math.atan2(self.center[1] - y, x - self.center[0])
-        angle = round(angle_radians * (180 / math.pi))
+        angle_radian = math.atan2(self.center[1] - y, x - self.center[0])
 
-        self.angles.append([(x, y), angle + 360 if angle < 0 else angle, [math.sin(angle), math.cos(angle), math.tan(angle), get_cot(math.sin(angle), math.cos(angle))]])
+        self.angles.append([(x, y), round(math.degrees(angle_radian)),
+                            [math.sin(angle_radian), math.cos(angle_radian), math.tan(angle_radian), get_cot(math.sin(angle_radian), math.cos(angle_radian))]])
 
     def get_center(self) -> tuple:
         return self.center
