@@ -1,5 +1,4 @@
 import math
-import pygame
 
 
 def get_points_distance(A, B) -> float:
@@ -13,7 +12,7 @@ def get_cot(sin, cos) -> float:
 
 
 class Circle:
-    def __init__(self, width, height, radius):
+    def __init__(self, width, height, radius) -> None:
         self.center = (width / 2, height / 2.5)
         self.radius = radius
         self.angles = []
@@ -43,11 +42,8 @@ class Circle:
     def get_radian(self, x, y):
         return math.atan2(self.center[1] - y, x - self.center[0])
 
-    def get_center(self) -> tuple:
-        return self.center
-
-    def get_radius(self) -> int:
-        return self.radius
-
     def get_angles(self) -> list:
         return self.angles
+
+    def clear_angles(self) -> None:
+        self.angles.clear()
